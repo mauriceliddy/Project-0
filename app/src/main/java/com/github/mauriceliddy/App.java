@@ -3,12 +3,43 @@
  */
 package com.github.mauriceliddy;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 import java.util.Scanner;
 
 public class App {
   public static void main(String[] args) {
 
+    // Read in DB data from Properties file
+    Properties properties = new Properties();
+    try {
+        FileInputStream fileStream = new FileInputStream("app/database.properties");
+        properties.load(fileStream);
+    } catch (IOException e1) {
+        e1.printStackTrace();
+    }
+
+    String url = properties.getProperty("URL");
+    String password = properties.getProperty("CONNECTION_PASSWORD");
+    String username = properties.getProperty("CONNECTION_USERNAME");
+
+    try {
+      Connection connection = DriverManager.getConnection(url, username, password);
+      AthleteDao athleteDao = new AthleteDao(connection);
+      Athlete athlete = new Athlete("Maurice",0);
+      athleteDao.insert(athlete);
+
+    } catch (SQLException e) {
+            e.printStackTrace();
+    }
+    
+    /*
     DataInput dataInput = new DataInput();
     // List<Athlete> masterList = dataInput.readInData();
 
@@ -29,5 +60,6 @@ public class App {
     ProcessData processData = new ProcessData(masterList);
     processData.processChoice(day, choice);
     scan.close();
+    */
   }
 }
