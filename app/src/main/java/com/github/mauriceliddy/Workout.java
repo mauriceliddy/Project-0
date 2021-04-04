@@ -2,22 +2,27 @@ package com.github.mauriceliddy;
 
 public class Workout {
 
+    private int wid;
     private String day;
     private int distance;
     private int gain;
     private double time;
+    private Athlete athlete;
 
     public Workout(){
 
     }
 
-    public Workout(String day, int distance, int gain, double time) {
+    public Workout(int wid, String day, int distance, int gain, double time, Athlete athlete) {
+        this.wid = wid;
         this.day = day;
         this.distance = distance;
         this.gain = gain;
         this.time = time;
+        this.athlete = athlete;
     }
 
+    
     public String getDay() {
         return day;
     }
@@ -50,13 +55,32 @@ public class Workout {
         this.time = time;
     }
 
+    public Athlete getAthlete() {
+        return athlete;
+    }
+
+    public void setAthlete(Athlete athlete) {
+        this.athlete = athlete;
+    }
+
     @Override
     public String toString() {
-        return "Workout{" +
-                "day='" + day + '\'' +
-                ", distance=" + distance +
-                ", gain=" + gain +
-                ", time=" + time +
-                '}';
+        return "Workout [athlete=" + athlete + ", day=" + day + ", distance=" + distance + ", gain=" + gain + ", time="
+                + time + "]";
     }
+
+    public String printWorkoutDataFromDB(){
+        return "Workout:  [Workout ID: " +wid+ " athleteID: " + athlete.getId() + ", day=" + day + ", distance=" + distance + ", gain=" + gain + ", time="
+        + time + "]";
+    }
+    public int getWid() {
+        return wid;
+    }
+
+    public void setWid(int wid) {
+        this.wid = wid;
+    }
+
+    
+    
 }

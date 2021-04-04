@@ -7,5 +7,6 @@ public interface DAO<E> {
     List<E> getAll();
     void update(E e);
     void delete(E e);
+    void clearTable();
     
 }

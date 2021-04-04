@@ -5,7 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class AthleteDao implements DAO<Athlete>{
 
@@ -15,8 +17,9 @@ public class AthleteDao implements DAO<Athlete>{
 
     }
 
-    @Override
-    public void insert(Athlete ath) {
+    
+    public Athlete insertAth(Athlete ath) {
+        Set<Athlete> returnedAthletes= new HashSet<>();
         PreparedStatement pStatement;
         try {
             pStatement = connection.prepareStatement("insert into athletes (aname) values(?)", Statement.RETURN_GENERATED_KEYS);
@@ -30,6 +33,8 @@ public class AthleteDao implements DAO<Athlete>{
             // TODO Auto-generated catch block
             e1.printStackTrace();
         }
+
+        return ath;
         
     }
 
@@ -50,7 +55,25 @@ public class AthleteDao implements DAO<Athlete>{
         // TODO Auto-generated method stub
         
     }
+
+
+    @Override
+    public void insert(Athlete e) {
+        // TODO Auto-generated method stub
+        
+    }
     
+    @Override
+    public void clearTable() {
+        try {
+            PreparedStatement pStatement = connection.prepareStatement("delete from athletes");
+            pStatement.execute();
+        } catch (SQLException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }    
+        
+    }
    
     
 }

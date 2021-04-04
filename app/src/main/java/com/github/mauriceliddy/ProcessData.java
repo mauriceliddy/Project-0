@@ -10,9 +10,9 @@ public class ProcessData {
     double time = 0;
     String workoutType = "";
     Scanner scan = new Scanner(System.in);
-    List<Athlete> masterList;
+    List<Workout> masterList;
 
-    public ProcessData(List<Athlete> masterList) {
+    public ProcessData(List<Workout> masterList) {
         this.masterList = masterList;
     }
 
@@ -50,34 +50,32 @@ public class ProcessData {
     public boolean findWorkout(String workoutType, String day,int distance,int gain,double time) {
 
         boolean workoutFound = false;
-        for (Athlete athlete : masterList) {
-            for (Workout workout : athlete.getWorkouts()) {
-
+        for (Workout workout : masterList) {
                 switch (workoutType) {
                 case "distance":
                     if (workout.getDistance() == distance && workout.getDay().equals(day)) {
-                        System.out.println("We found a workout, you should run with: " + athlete.getName() + " on "
+                        System.out.println("We found a workout, you should run with: " + workout.getAthlete().getName() + " on "
                                 + workout.getDay());
                         workoutFound = true;
                     }
                     break;
                 case "gain":
                     if (workout.getGain() == gain && workout.getDay().equals(day)) {
-                        System.out.println("We found a workout, you should run with: " + athlete.getName() + " on "
+                        System.out.println("We found a workout, you should run with: " + workout.getAthlete().getName() + " on "
                                 + workout.getDay());
                         workoutFound = true;
                     }
                     break;
                 case "time":
                     if (workout.getTime() == time && workout.getDay().equals(day)) {
-                        System.out.println("We found a workout, you should run with: " + athlete.getName() + " on "
+                        System.out.println("We found a workout, you should run with: " + workout.getAthlete().getName() + " on "
                                 + workout.getDay());
                         workoutFound = true;
                     }
                     break;
                 }
             }
-        }
+        
         if (!workoutFound) {
             System.out.println("Sorry, no one to run with this week..");
         }
