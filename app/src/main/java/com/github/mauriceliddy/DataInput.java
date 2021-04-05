@@ -10,8 +10,9 @@ public class DataInput {
     List<Workout> masterList = new ArrayList<>();
 
     public List<Workout> readInData() {
+
         try {
-            Scanner sc = new Scanner(new File("data.csv"));
+            Scanner sc = new Scanner(new File("C:/VSCode Programs/Week1/Project-0/data.csv"));
             sc.useDelimiter(","); // sets the delimiter pattern
             while (sc.hasNext()) // returns a boolean value
             {

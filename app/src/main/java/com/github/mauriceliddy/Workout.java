@@ -69,9 +69,9 @@ public class Workout {
                 + time + "]";
     }
 
-    public String printWorkoutDataFromDB(){
-        return "Workout:  [Workout ID: " +wid+ " athleteID: " + athlete.getId() + ", day=" + day + ", distance=" + distance + ", gain=" + gain + ", time="
-        + time + "]";
+    public void printWorkoutDataFromDB(){
+        System.out.println("Workout:  [Workout ID: " +wid+ " athleteID: " + athlete.getId() + ", day=" + day + ", distance=" + distance + ", gain=" + gain + ", time="
+        + time + "]");
     }
     public int getWid() {
         return wid;

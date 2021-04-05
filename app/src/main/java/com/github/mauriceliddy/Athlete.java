@@ -1,6 +1,5 @@
 package com.github.mauriceliddy;
 
-import java.util.List;
 
 public class Athlete {
 

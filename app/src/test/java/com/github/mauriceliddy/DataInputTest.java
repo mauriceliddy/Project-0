@@ -10,8 +10,7 @@ import java.util.List;
 
 class DataInputTest {
     DataInput dataInput = new DataInput();
-    String filePath = "C:/VSCode Programs/Week1/Project-0/dataObject.csv";
-    List<Athlete> masterList = dataInput.readDataByObject(filePath);
+    List<Workout> masterList = dataInput.readInData();
 
     @Test
     void basicTest() {
@@ -20,13 +19,13 @@ class DataInputTest {
     }
 
     @Test
-    void testMastlistIsPopulated() {
+    void testMasterListIsPopulated() {
         assertNotNull(masterList);
     }
 
     @Test
-    void testAthleteNumber() {
-        assertEquals(4, masterList.size());
+    void testWorkoutNumber() {
+        assertEquals(20, masterList.size());
     }
 
 
