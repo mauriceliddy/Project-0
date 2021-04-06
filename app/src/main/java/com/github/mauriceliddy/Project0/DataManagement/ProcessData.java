@@ -1,8 +1,9 @@
-package com.github.mauriceliddy;
+package com.github.mauriceliddy.Project0.DataManagement;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import com.github.mauriceliddy.Project0.Model.*;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

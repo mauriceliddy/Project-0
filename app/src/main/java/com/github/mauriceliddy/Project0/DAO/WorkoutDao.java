@@ -1,5 +1,5 @@
-package com.github.mauriceliddy;
-
+package com.github.mauriceliddy.Project0.DAO;
+import com.github.mauriceliddy.Project0.Model.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

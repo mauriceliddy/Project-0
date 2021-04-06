@@ -1,9 +1,12 @@
-package com.github.mauriceliddy;
+package com.github.mauriceliddy.Project0;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.github.mauriceliddy.Project0.DataManagement.*;
+import com.github.mauriceliddy.Project0.Model.*;
 
 import org.junit.jupiter.api.Test;
 

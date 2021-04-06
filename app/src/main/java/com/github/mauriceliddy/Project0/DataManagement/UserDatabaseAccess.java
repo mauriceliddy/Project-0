@@ -1,4 +1,6 @@
-package com.github.mauriceliddy;
+package com.github.mauriceliddy.Project0.DataManagement;
+import com.github.mauriceliddy.Project0.Model.*;
+import com.github.mauriceliddy.Project0.DAO.*;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -26,7 +28,7 @@ public class UserDatabaseAccess {
 
     public void accessDatabase() {
         try {
-            FileInputStream fileStream = new FileInputStream("app/database.properties");
+            FileInputStream fileStream = new FileInputStream("C:/VSCode Programs/Week1/Project-0/app/database.properties");
             properties.load(fileStream);
         } catch (IOException e1) {
             e1.printStackTrace();

@@ -1,4 +1,4 @@
-package com.github.mauriceliddy;
+package com.github.mauriceliddy.Project0.Model;
 
 
 public class Athlete {
